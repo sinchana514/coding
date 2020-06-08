@@ -1,0 +1,10 @@
+QUESTION
+Program program to find whether a string is a palindrome or not
+
+CODE
+string = input("Please enter your own String : ")
+
+if(string == string[:: - 1]):
+   print("True")
+else:
+   print("False")
