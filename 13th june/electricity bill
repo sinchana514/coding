@@ -4,32 +4,36 @@ Write a C Program to calculate Electricity Bill
 CODE
 #include <stdio.h>
 
+#include <stdio.h>
+#include <stdlib.h>
 int main()
 {
     int unit;
-    float amt, total_amt, sur_charge;
-    printf("Enter total units consumed: ");
-    scanf("%d", &unit);
-    if(unit <= 50)
+    printf("U=");
+    scanf("%d",&unit); 
+    if(unit<=100)
     {
-        amt = unit * 0.50;
+        printf("%d",unit*10);
+        
     }
-    else if(unit <= 150)
+    else if(unit<=200)
     {
-        amt = 25 + ((unit-50) * 0.75);
+        printf("%d",(100*5)+(unit-100)*15);
+        
     }
-    else if(unit <= 250)
+    else if(unit<=300)
     {
-        amt = 100 + ((unit-150) * 1.20);
+        printf("%d",(100*10)+(100*15)+(unit-200)*20);
+        
+    }
+    else if(unit>300)
+    {
+        printf("%d",(100*10)+(100*15)+(100*20)+(unit-300)*25);
+        
     }
     else
     {
-        amt = 220 + ((unit-250) * 1.50);
-    }
-    sur_charge = amt * 0.20;
-    total_amt  = amt + sur_charge * 63.2;
-
-    printf("Electricity Bill = Rs. %.2f", total_amt);
-
-    return 0;
+        printf("No value");
+}
+return 0;
 }
